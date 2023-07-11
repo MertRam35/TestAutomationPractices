@@ -1,15 +1,14 @@
-package features;
+Feature:
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import java.util.List;
 
-// page_url = about:blank
-public class login.feature {
-
-    public login.feature(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
-}
+  Scenario:
+    Given navigate to ”https://www.amazon.com/”
+    Then Enter “socks” to search box
+    Then  Open the second page of the results
+    Then Verify the second page is opened
+    And Select the product on the second row and second column
+    And Add the selected product to the Basket
+    And Select first available size on the “Size” dropdown element
+    And Click on the “See All Buying Options” button
+    And Click on the “Add to Cart” button on the newly opened right panel
+    Then Verify the “Added” text is visible on the “Qty” dropdown
